@@ -30,12 +30,15 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Preview
 fun App() {
     MaterialTheme {
-        Column {
+        Column(
+            modifier = Modifier
+                .verticalScroll(rememberScrollState())
+                .padding(64.dp)
+
+        ) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(64.dp)
-                    .verticalScroll(rememberScrollState())
             ) {
                 Image(
                     painter = painterResource(Res.drawable.dhiraj_avatar),
@@ -71,7 +74,7 @@ fun App() {
             }
             Text(
                 modifier = Modifier
-                    .padding(horizontal = 32.dp),
+                    .padding(top = 32.dp),
                 text = "\n" +
                         "Hi, it's Dhiraj Chhabra! \uD83D\uDC4B\n" +
                         "\uD83D\uDD2D I’m currently working on Herewith Android Application\n" +
